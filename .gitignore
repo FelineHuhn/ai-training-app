@@ -3,3 +3,10 @@ node_modules
 .DS_Store
 .env
 .env.*
+
+# Secret files (also blocked for the agent in .claude/settings.json)
+secrets/
+
+# Claude Code: personal settings and internal files
+.claude/settings.local.json
+.claude/.cc-writes/
