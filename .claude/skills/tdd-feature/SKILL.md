@@ -9,17 +9,22 @@ Implement the approved plan in `$ARGUMENTS`, test-first.
 
 ## Before you start
 
-1. Read the plan file and `CLAUDE.md`.
-2. If `CLAUDE.md` has no **Commands** section, stop and tell me. Take every command from that section. Never run the tests in watch mode: use the command for a single test run.
-3. If the current branch is `main`, stop and tell me.
+1. If the argument is missing or the plan file does not exist, stop and ask me.
+2. Read the plan file and `CLAUDE.md`. `<n>` is the number at the start of the plan file name.
+3. If `CLAUDE.md` has no **Commands** section, stop and tell me. Take every command from that section. Never run the tests in watch mode: use the command for a single test run.
+4. If the current branch is `main`, stop and tell me.
 
 ## For each acceptance criterion, in the order of the plan
 
 1. **Red:** write the test from the plan. Run only this test file, once.
-2. **Check the reason:** the test must fail because the feature is missing (an assertion fails, an element is not found). If it fails because of a typo, a wrong import or a syntax error, fix the test and run it again. If it passes right away, stop and tell me: the test does not check the new behavior. Tell me the failure message in one line.
-3. **Green:** write the minimal code that makes this test pass. Nothing more.
-4. Run the test again until it passes.
-5. **Clean up:** improve names and structure of the new code. Run the test again: it must stay green.
+2. **Check the reason:** the test must fail because the feature is missing (an assertion fails, an element is not found).
+   - If it fails only because the new module does not exist yet, create an empty stub (for example a component that returns `null`) and run it again.
+   - If it fails because of a typo or a syntax error in the test, fix the test and run it again.
+   - If it passes right away, stop and tell me: the test does not check the new behavior.
+   - Tell me the failure message in one line.
+3. **Green:** write the minimal code that makes this test pass. Nothing more. Do not change the new test.
+4. Run the test again until it passes. If it still fails after 3 attempts, or you think the test is wrong, stop and tell me.
+5. **Clean up:** improve names and structure of the new code. Do not change what the test checks. Run the test again: it must stay green.
 
 ## Rules
 
@@ -31,10 +36,10 @@ Implement the approved plan in `$ARGUMENTS`, test-first.
 
 ## At the end
 
-Run all checks from the **Commands** section of `CLAUDE.md`. Then report:
+Run all checks from the **Commands** section of `CLAUDE.md`. If a check fails, fix it only in the files of the plan, or stop and ask me. Then report:
 
 - for each acceptance criterion: the test, the reason it failed first, and that it passes now
 - the result of each check (passed or failed, with the error)
 - every file you changed
 
-End with the next command for me: `/open-pr <n>`.
+Only if all checks pass, end with the next command for me: `/open-pr <n>`.
