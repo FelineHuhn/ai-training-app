@@ -16,7 +16,7 @@ Implement the approved plan in `$ARGUMENTS`, test-first.
 ## For each acceptance criterion, in the order of the plan
 
 1. **Red:** write the test from the plan. Run only this test file, once.
-2. **Check the reason:** the test must fail because the feature is missing (an assertion fails, an element is not found). If it fails because of a typo, a wrong import or a syntax error, fix the test and run it again. Tell me the failure message in one line.
+2. **Check the reason:** the test must fail because the feature is missing (an assertion fails, an element is not found). If it fails because of a typo, a wrong import or a syntax error, fix the test and run it again. If it passes right away, stop and tell me: the test does not check the new behavior. Tell me the failure message in one line.
 3. **Green:** write the minimal code that makes this test pass. Nothing more.
 4. Run the test again until it passes.
 5. **Clean up:** improve names and structure of the new code. Run the test again: it must stay green.

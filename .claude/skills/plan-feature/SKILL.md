@@ -10,8 +10,9 @@ Plan issue #$ARGUMENTS. Do not write, change or delete application code, tests o
 ## Before you plan
 
 1. If Plan mode is not active, stop and tell me to switch to Plan mode (Shift+Tab) and start the skill again.
-2. Read the issue: `gh issue view $ARGUMENTS`.
-3. Read `CLAUDE.md` and explore only the code that matters for this issue.
+2. Run `git branch --show-current` and `git status`. If the branch is not `main` or there are uncommitted changes, stop and tell me.
+3. Read the issue: `gh issue view $ARGUMENTS`.
+4. Read `CLAUDE.md` and explore only the code that matters for this issue.
 
 ## The plan
 

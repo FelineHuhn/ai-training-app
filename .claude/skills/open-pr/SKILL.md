@@ -35,4 +35,4 @@ Closes #<n>
 - Tick a criterion only if a test or a check that you ran in this conversation covers it. Leave all others unticked.
 - Under "How I tested", list a manual check in the browser only if I told you that I did it. Ask me if you do not know.
 
-At the end, give me the URL of the pull request.
+At the end, give me the URL of the pull request. Remind me to use one review tool for it: the reviewer sub-agent or `/code-review`, not both.
